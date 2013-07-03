@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="gae-standards">
+<head>
+    <title>Topgate, Inc. GAE development standards</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+
+    <link href="/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href="/css/print.css" media="print" rel="stylesheet" type="text/css">
+    <!--[if IE]>
+    <link href="/css/ie.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <![endif]-->
+
+    <script type="text/javascript" src="/scripts/main.min.js" charset="utf-8"></script>
+</head>
+<body>
+
+<div ng-view>
+</div>
+
+<script type="text/ng-template" id="/template/sample.html">
+    <div ng-controller="SampleTestController">
+        <input type="text" ng-model="name">
+        {{name}}
+    </div>
+</script>
+
+<script type="text/ng-template" id="/template/main.html">
+    <p>
+        メインです。<br>
+        <a ng-href="/sample">サンプル</a>
+    </p>
+</script>
+
+</body>
+</html>

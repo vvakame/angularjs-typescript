@@ -1,0 +1,37 @@
+{
+	"name": "gae-standards",
+	"version": "0.0.1",
+	"private": true,
+	"engines": {
+		"node": "0.10.7",
+		"npm": "1.2.21"
+	},
+	"scripts": {
+		"start": "run_server.sh"
+	},
+	"devDependencies": {
+		"grunt": "0.4.1",
+
+		"tsd": "0.3.1",
+
+		"grunt-contrib-concat": "0.3.0",
+		"grunt-contrib-clean": "0.4.1",
+		"grunt-contrib-copy": "0.4.1",
+		"grunt-contrib-uglify": "0.2.2",
+		"grunt-text-replace": "0.3.2",
+		"grunt-contrib-watch": "0.4.4",
+
+		"grunt-typescript": "0.2.0",
+		"grunt-contrib-compass": "0.2.0",
+		"grunt-bower-task": "0.2.3",
+
+		"grunt-karma": "0.4.4",
+		"grunt-exec": "0.4.1",
+		"grunt-open": "0.2.0",
+		"http-server": "0.5.5",
+
+		"matchdep": "0.1.2"
+	},
+	"dependencies": {
+	}
+}

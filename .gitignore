@@ -1,0 +1,35 @@
+.DS_Store
+
+# for client side development
+.sass-cache/
+node_modules/
+components/
+bower-task/
+d.ts/
+
+src/test/typescript/*.js
+src/test/typescript/*.js.map
+src/test/typescript/*.d.ts
+src/test/typescript/libs/
+
+src/test/resources/typescript/data/
+
+src/main/webapp/css
+
+src/main/webapp/scripts/*.js
+src/main/webapp/scripts/**/*.js
+src/main/webapp/scripts/*.js.map
+src/main/webapp/scripts/*.d.ts
+
+# bower generated
+src/main/webapp/scripts/libs/*
+
+# tsd generated
+src/main/typescript/libs/DefinitelyTyped
+
+# karma generated
+test-results.xml
+
+# WebStorm meta file
+.idea/
+

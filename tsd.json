@@ -1,0 +1,28 @@
+{
+	"version": "v4",
+	"repo": "borisyankov/DefinitelyTyped",
+	"ref": "master",
+	"path": "src/main/typescript/libs/typings",
+	"bundle": "src/main/typescript/libs/typings/bundle.d.ts",
+	"installed": {
+		"jquery/jquery.d.ts": {
+			"commit": "1a6eaf4055a28f16bbbf664df0c19cad0d6dfeda"
+		},
+		"angularjs/angular.d.ts": {
+			"commit": "1a6eaf4055a28f16bbbf664df0c19cad0d6dfeda"
+		},
+		"angularjs/angular-route.d.ts": {
+			"commit": "1a6eaf4055a28f16bbbf664df0c19cad0d6dfeda"
+		},
+
+		"mocha/mocha.d.ts": {
+			"commit": "1a6eaf4055a28f16bbbf664df0c19cad0d6dfeda"
+		},
+		"expectations/expectations.d.ts": {
+			"commit": "1a6eaf4055a28f16bbbf664df0c19cad0d6dfeda"
+		},
+		"angularjs/angular-mocks.d.ts": {
+			"commit": "1a6eaf4055a28f16bbbf664df0c19cad0d6dfeda"
+		}
+	}
+}

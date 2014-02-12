@@ -1,10 +1,8 @@
-///<reference path='libs/DefinitelyTyped/angularjs/angular.d.ts' />
-
 /**
  * モデルのモジュール。
  */
 module Model {
-	'use strict';
+	"use strict";
 
 	export class Sample {
 		test:string;
@@ -13,7 +11,7 @@ module Model {
 		 * @constructor
 		 * @param data JSONObjectまたはJSON文字列
 		 */
-			constructor(data) {
+			constructor(data:any) {
 			if (angular.isString(data)) {
 				data = angular.fromJson(data);
 			}

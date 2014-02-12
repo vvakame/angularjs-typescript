@@ -1,3 +1,5 @@
+///<reference path='libs/typings/angularjs/angular-route.d.ts' />
+
 ///<reference path='Model.ts' />
 ///<reference path='Service.ts' />
 ///<reference path='Controller.ts' />
@@ -8,15 +10,15 @@ console.log("ignite!");
  * モジュールの作成や動作の定義。
  */
 module App {
-	'use strict';
+	"use strict";
 
-	export var appName = "gae-standards";
+	export var appName = "angularjs-with-typescript";
 
 	// モジュールの定義
 	angular.module(
 		appName,
-		[appName + ".controller", appName + ".service", appName + ".filter", appName + ".directive"],
-		($routeProvider:ng.IRouteProvider, $locationProvider:ng.ILocationProvider)=> {
+		["ngRoute", appName + ".controller", appName + ".service", appName + ".filter", appName + ".directive"],
+		($routeProvider:ng.route.IRouteProvider, $locationProvider:ng.ILocationProvider)=> {
 			$routeProvider
 				.when("/sample", {
 					templateUrl: "/template/sample.html"
@@ -29,7 +31,7 @@ module App {
 		}
 	)
 		// モジュールとして登録する。angular.module() -> .config() -> .run() で1セット。
-		.run(($rootScope:ng.IRootScopeService, $routeParams:ng.IRouteParamsService)=> {
+		.run(($rootScope:ng.IRootScopeService, $routeParams:ng.route.IRouteParamsService)=> {
 		})
 	;
 
@@ -65,9 +67,9 @@ module App {
 		}
 	)
 		.directive("tgFileBind", ()=> {
-			return (scope, elm, attrs) => {
-				elm.bind("change", (evt) => {
-					scope.$apply((scope)=> {
+			return (scope:any, elm:any, attrs:any) => {
+				elm.bind("change", (evt:any) => {
+					scope.$apply((scope:any)=> {
 						scope[attrs.name] = evt.target.files;
 					});
 				});
@@ -75,8 +77,8 @@ module App {
 		})
 		.directive("tgContenteditable", ($parse:ng.IParseService)=> {
 			return {
-				require: 'ngModel',
-				link: (scope, elm, attrs, ctrl:ng.INgModelController) => {
+				require: "ngModel",
+				link: (scope:any, elm:any, attrs:any, ctrl:ng.INgModelController) => {
 					var value = $parse(attrs.ngModel)(scope);
 
 					elm.attr("contenteditable", "");
@@ -86,9 +88,9 @@ module App {
 							ctrl.$setViewValue(elm.html());
 						});
 					};
-					elm.bind('blur', viewToModel);
-					elm.bind('keyup', viewToModel);
-					elm.bind('keydown', viewToModel);
+					elm.bind("blur", viewToModel);
+					elm.bind("keyup", viewToModel);
+					elm.bind("keydown", viewToModel);
 
 					// model -> view
 					ctrl.$render = () => {
@@ -122,14 +124,14 @@ module App {
 	 * @param {function} [options.compare]
 	 */
 		.filter("rmDuplicated", ()=> {
-			return (input:any[], options)=> {
+			return (input:any[], options:any)=> {
 				if (angular.isUndefined(input)) {
 					return input;
 				} else if (!angular.isArray(input)) {
 					console.error("input is not array.", input);
 					return input;
 				}
-				var excludeList;
+				var excludeList:any;
 				if (angular.isUndefined(options)) {
 					console.error("options is required.");
 					return input;
@@ -138,7 +140,7 @@ module App {
 				} else if (angular.isArray(options.exclude)) {
 					excludeList = options.exclude;
 				}
-				var compareFn = (a, b) => {
+				var compareFn = (a:any, b:any) => {
 					return a.$key.keystr === b.$key.keystr;
 				};
 				if (angular.isUndefined(options)) {
@@ -146,15 +148,15 @@ module App {
 					compareFn = options.compare;
 				}
 
-				var result = [];
+				var result:any[] = [];
 				input.forEach((data)=> {
-					if (!excludeList.some((exclude) => compareFn(data, exclude))) {
+					if (!excludeList.some((exclude:any) => compareFn(data, exclude))) {
 						result.push(data);
 					}
 				});
 
 				return result;
-			}
+			};
 		}
 	)
 	;

@@ -2,10 +2,12 @@
 
 # for client side development
 .sass-cache/
+tsd-cache/
 node_modules/
-components/
+bower_components/
 bower-task/
-d.ts/
+src/main/typescript/libs/
+tscommand.tmp.txt
 
 src/test/typescript/*.js
 src/test/typescript/*.js.map
@@ -32,4 +34,3 @@ test-results.xml
 
 # WebStorm meta file
 .idea/
-

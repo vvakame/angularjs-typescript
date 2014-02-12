@@ -1,32 +1,25 @@
-<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Jasmine</title>
-    <link rel="stylesheet" type="text/css" href="libs/jasmine.css">
-
-    <script type="text/javascript" src="../../../src/main/webapp/scripts/main.min.js"></script>
-
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-
-    <script type="text/javascript" src="libs/jasmine.js"></script>
-    <script type="text/javascript" src="libs/jasmine-html.js"></script>
-
-    <script type="text/javascript" src="libs/angular-mocks.js"></script>
-
-    <script type="text/javascript" src="testdata.js"></script>
-    <script type="text/javascript" src="IgniteSpec.js"></script>
-
-    <script type="text/javascript">
-        var jasmineEnv = jasmine.getEnv();
-        jasmineEnv.updateInterval = 1000;
-        var htmlReporter = new jasmine.HtmlReporter();
-        jasmineEnv.addReporter(htmlReporter);
-        $(document).ready(function () {
-            jasmineEnv.execute();
-        });
-    </script>
+	<meta charset="utf-8">
+	<title>Mocha Tests</title>
+	<link rel="stylesheet" href="libs/mocha.css" />
 </head>
 <body>
+<div id="mocha"></div>
+<script src="../../main/webapp/scripts/libs/es5-shim.js"></script>
+<script src="../../main/webapp/scripts/libs/jquery.js"></script>
+<script src="../../main/webapp/scripts/libs/angular.js"></script>
+<script src="../../main/webapp/scripts/libs/angular-route.js"></script>
+
+<script src="./libs/angular-mocks.js"></script>
+
+<script src="./libs/mocha.js"></script>
+<script src="./libs/expectations.js"></script>
+<script>mocha.setup('bdd')</script>
+<script src="./IgniteSpec.js"></script>
+<script>
+	mocha.checkLeaks();
+	mocha.run();
+</script>
 </body>
 </html>

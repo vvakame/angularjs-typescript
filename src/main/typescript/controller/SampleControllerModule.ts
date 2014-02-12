@@ -1,10 +1,10 @@
-///<reference path='../libs/DefinitelyTyped/angularjs/angular.d.ts' />
+///<reference path='../libs/typings/angularjs/angular.d.ts' />
 
 ///<reference path='../Model.ts' />
 ///<reference path='../service/SampleServiceModule.ts' />
 
 module Sample {
-	'use strict';
+	"use strict";
 
 	export interface Scope extends ng.IScope {
 		name: string;

@@ -1,4 +1,4 @@
-# 簡単な解説
+# 簡単な解説 [![Build Status](https://travis-ci.org/vvakame/angularjs-typescript.png)](https://travis-ci.org/vvakame/angularjs-typescript) [![Dependency Status](https://david-dm.org/vvakame/angularjs-typescript.png)](https://david-dm.org/vvakame/angularjs-typescript)
 
 ## cloneした後にやること
 

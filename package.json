@@ -28,7 +28,7 @@
 		"karma-junit-reporter": "0.2.1",
 		"expectations": "0.2.5",
 
-		"grunt-exec": "0.4.4",
+		"grunt-exec": "0.4.5",
 		"grunt-open": "0.2.3",
 		"http-server": "0.6.1",
 

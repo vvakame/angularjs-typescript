@@ -17,7 +17,7 @@
 			"main-js": "**/es5-shim.js"
 		},
 		"jquery": {
-			"main-js": "**/jquery.js"
+			"main-js": "dist/jquery.js"
 		},
 		"angular": {
 			"main-js": "**/angular.js",

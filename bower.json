@@ -2,15 +2,15 @@
 	"name": "angularjs-with-typescirpt",
 	"version": "0.0.0",
 	"dependencies": {
-		"es5-shim": "2.1.0",
+		"es5-shim": "2.3.0",
 		"jquery": "2.1.0",
-		"angular": "1.2.12",
-		"angular-route": "1.2.12"
+		"angular": "1.2.16",
+		"angular-route": "1.2.16"
 	},
 	"devDependencies": {
-		"mocha": "1.14.0",
+		"mocha": "1.18.2",
 		"expectations": "0.2.5",
-		"angular-mocks": "1.2.12"
+		"angular-mocks": "1.2.16"
 	},
 	"exportsOverride": {
 		"es5-shim": {

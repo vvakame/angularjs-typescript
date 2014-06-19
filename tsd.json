@@ -17,7 +17,7 @@
 		"mocha/mocha.d.ts": {
 			"commit": "a8c25e3a7253541e8dac26ea526ca6deb0e70e86"
 		},
-		"expectations/expectations.d.ts": {
+		"assert/assert.d.ts": {
 			"commit": "a8c25e3a7253541e8dac26ea526ca6deb0e70e86"
 		},
 		"angularjs/angular-mocks.d.ts": {

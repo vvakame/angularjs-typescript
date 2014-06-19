@@ -19,7 +19,7 @@ module.exports = function (config) {
 			'src/main/webapp/scripts/libs/angular.js',
 			'src/main/webapp/scripts/**/*.js',
 			'src/test/typescript/libs/*.js',
-			'src/test/typescript/*.js'
+			'src/test/typescriptEspowered/*.js'
 		],
 
 

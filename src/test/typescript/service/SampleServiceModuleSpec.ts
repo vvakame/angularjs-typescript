@@ -1,5 +1,5 @@
 ///<reference path='../../../main/typescript/libs/typings/mocha/mocha.d.ts' />
-///<reference path='../../../main/typescript/libs/typings/expectations/expectations.d.ts' />
+///<reference path='../../../main/typescript/libs/typings/assert/assert.d.ts' />
 
 ///<reference path='../../../main/typescript/libs/typings/angularjs/angular.d.ts' />
 ///<reference path='../../../main/typescript/libs/typings/angularjs/angular-mocks.d.ts' />
@@ -34,7 +34,7 @@ describe("Serviceの", ()=> {
 
 			$httpBackend.flush();
 
-			expect(model).toBeDefined();
+			assert(model);
 			// expect(model instanceof Model.Sample).toBeTruthy();
 		});
 	});

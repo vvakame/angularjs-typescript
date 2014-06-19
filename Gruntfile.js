@@ -17,6 +17,7 @@ module.exports = function (grunt) {
 				"outBase": "src/main/webapp",
 				"jsMainOut": "src/main/webapp/scripts",
 				"jsTestOut": "src/test/typescript",
+				"jsEspowerOut": "src/test/typescriptEspowered",
 				"cssOut": "src/main/webapp/css",
 				"imageOut": "src/main/webapp/images"
 			}
@@ -71,54 +72,7 @@ module.exports = function (grunt) {
 		tslint: {
 			options: {
 				formatter: "prose",
-				configuration: {
-					// https://github.com/palantir/tslint#supported-rules
-					"rules": {
-						"bitwise": true,
-						"classname": true,
-						"curly": true,
-						"debug": false,
-						"dupkey": true,
-						"eofline": true,
-						"eqeqeq": true,
-						"evil": true,
-						"forin": false, // TODO 解消方法よくわからない
-						// "indent": [false, 4], // WebStormのFormatterと相性が悪い
-						"labelpos": true,
-						"label-undefined": true,
-						// "maxlen": [false, 140],
-						"noarg": true,
-						"noconsole": [false,
-							"debug",
-							"info",
-							"time",
-							"timeEnd",
-							"trace"
-						],
-						"noconstruct": true,
-						"nounreachable": false, // switchに警告出してくるので…
-						"noempty": false, // プロパティアクセス付き引数有りのコンストラクタまで怒られるので
-						"oneline": [true,
-							"check-open-brace",
-							"check-catch",
-							"check-else",
-							"check-whitespace"
-						],
-						"quotemark": [true, "double"],
-						"radix": false, // 10の基数指定するのめんどいので
-						"semicolon": true,
-						"sub": true,
-						"trailing": true,
-						"varname": false, // _hoge とかが許可されなくなるので…
-						"whitespace": [false, // WebStormのFormatterと相性が悪い
-							"check-branch",
-							"check-decl",
-							"check-operator",
-							"check-separator" ,
-							"check-type"
-						]
-					}
-				}
+				configuration: grunt.file.readJSON("tslint.json")
 			},
 			files: {
 				src: [
@@ -131,7 +85,33 @@ module.exports = function (grunt) {
 				}
 			}
 		},
-		watch: {
+		typedoc: {
+			main: {
+				options: {
+					// module: "<%= ts.options.module %>",
+					out: './docs',
+					name: '<%= pkg.name %>',
+					target: '<%= ts.options.target %>'
+				},
+				src: [
+					'<%= opt.client.tsMain %>/**/*'
+				]
+			}
+		},
+		espower: {
+			client: {
+				files: [
+					{
+						expand: true,				// Enable dynamic expansion.
+						cwd: '<%= opt.client.jsTestOut %>/',				// Src matches are relative to this path.
+						src: ['**/*.js'],		// Actual pattern(s) to match.
+						dest: '<%= opt.client.jsEspowerOut %>/',	// Destination path prefix.
+						ext: '.js'					 // Dest filepaths will have this extension.
+					}
+				]
+			}
+		},
+  		watch: {
 			"typescript-main": {
 				files: ['<%= opt.client.tsMain %>/**/*.ts'],
 				tasks: ['typescript:main']
@@ -205,7 +185,8 @@ module.exports = function (grunt) {
 					// client test
 					'<%= opt.client.jsTestOut %>/*.js',
 					'<%= opt.client.jsTestOut %>/*.js.map',
-					'<%= opt.client.jsTestOut %>/*.d.ts'
+					'<%= opt.client.jsTestOut %>/*.d.ts',
+					'<%= opt.client.jsEspowerOut %>/'
 				]
 			},
 			tsd: {
@@ -267,7 +248,7 @@ module.exports = function (grunt) {
 	grunt.registerTask(
 		'test',
 		"必要なコンパイルを行いkarma(旧testacular)でテストを実行する。",
-		['clean:clientScript', 'ts:clientTest', 'tslint', 'karma']);
+		['clean:clientScript', 'ts:clientTest', 'tslint', 'espower', 'karma']);
 	grunt.registerTask(
 		'test-browser',
 		"必要なコンパイルを行いブラウザ上でテストを実行する。",

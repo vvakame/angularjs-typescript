@@ -24,11 +24,13 @@ src/main/webapp/scripts/**/*.js
 src/main/webapp/scripts/*.js.map
 src/main/webapp/scripts/*.d.ts
 
+# espower generated
+src/test/typescriptEspowered/
+
 # bower generated
 src/main/webapp/scripts/libs/*
 
 # tsd generated
-src/main/typescript/libs/DefinitelyTyped
 
 # karma generated
 test-results.xml

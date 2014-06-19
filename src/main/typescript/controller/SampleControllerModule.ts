@@ -6,14 +6,14 @@
 module Sample {
 	"use strict";
 
-	export interface Scope extends ng.IScope {
+	export interface IScope extends ng.IScope {
 		name: string;
 		temp: string;
 	}
 
 	export class TestController {
 
-		constructor(public $scope:Scope, public sampleService:Service.SampleService) {
+		constructor(public $scope:IScope, public sampleService:Service.SampleService) {
 			$scope.name = "サーバと通信中";
 			$scope.temp = "仮";
 		}

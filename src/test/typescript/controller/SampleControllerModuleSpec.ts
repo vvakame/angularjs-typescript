@@ -1,5 +1,5 @@
 ///<reference path='../../../main/typescript/libs/typings/mocha/mocha.d.ts' />
-///<reference path='../../../main/typescript/libs/typings/expectations/expectations.d.ts' />
+///<reference path='../../../main/typescript/libs/typings/assert/assert.d.ts' />
 
 ///<reference path='../../../main/typescript/libs/typings/angularjs/angular.d.ts' />
 ///<reference path='../../../main/typescript/libs/typings/angularjs/angular-mocks.d.ts' />
@@ -15,7 +15,7 @@ describe("Controllerの", ()=> {
 	});
 
 	describe("Sample.TestControllerの", ()=> {
-		var $scope:Sample.Scope;
+		var $scope:Sample.IScope;
 		var $controller:ng.IControllerService;
 		var $httpBackend:ng.IHttpBackendService;
 
@@ -33,8 +33,9 @@ describe("Controllerの", ()=> {
 					domain: "topgate.co.jp"
 				}
 			});
-			expect($scope.name).toBe("サーバと通信中");
-			expect($scope.temp).toBe("仮");
+			controller.$scope;
+			assert($scope.name === "サーバと通信中");
+			assert($scope.temp === "仮");
 		});
 	});
 });

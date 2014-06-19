@@ -19,6 +19,7 @@
 		"grunt-ts": "1.11.2",
 		"grunt-tslint": "0.4.1",
 		"grunt-tsd": "0.1.0",
+		"grunt-typedoc": "0.1.1",
 
 		"grunt-contrib-compass": "0.8.0",
 		"grunt-bower-task": "0.3.4",
@@ -30,7 +31,7 @@
 		"karma-mocha": "0.1.4",
 		"karma-phantomjs-launcher": "0.1.4",
 		"karma-junit-reporter": "0.2.2",
-		"expectations": "0.2.5",
+		"grunt-espower": "0.7.1",
 
 		"grunt-exec": "0.4.5",
 		"grunt-open": "0.2.3",

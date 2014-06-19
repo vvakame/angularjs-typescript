@@ -9,7 +9,7 @@
 	},
 	"devDependencies": {
 		"mocha": "1.20.1",
-		"expectations": "0.2.5",
+		"power-assert": "0.7.2",
 		"angular-mocks": "1.2.18"
 	},
 	"exportsOverride": {
@@ -32,8 +32,8 @@
 			"test-js": "*.js",
 			"test-css": "*.css"
 		},
-		"expectations": {
-			"test-js": "expectations.js"
+		"power-assert": {
+			"test-js": "build/*.js"
 		},
 		"angular-mocks": {
 			"test-js": "**/*.js"

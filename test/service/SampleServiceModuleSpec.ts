@@ -1,10 +1,10 @@
-///<reference path='../../../main/typescript/libs/typings/mocha/mocha.d.ts' />
-///<reference path='../../../main/typescript/libs/typings/assert/assert.d.ts' />
+///<reference path='../../typings/mocha/mocha.d.ts' />
+///<reference path='../../typings/assert/assert.d.ts' />
 
-///<reference path='../../../main/typescript/libs/typings/angularjs/angular.d.ts' />
-///<reference path='../../../main/typescript/libs/typings/angularjs/angular-mocks.d.ts' />
+///<reference path='../../typings/angularjs/angular.d.ts' />
+///<reference path='../../typings/angularjs/angular-route.d.ts' />
 
-///<reference path='../../../main/typescript/Ignite.ts' />
+///<reference path='../../scripts/Ignite.ts' />
 
 "use strict";
 

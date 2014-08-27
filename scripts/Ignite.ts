@@ -1,4 +1,5 @@
-///<reference path='libs/typings/angularjs/angular-route.d.ts' />
+///<reference path='../typings/angularjs/angular.d.ts' />
+///<reference path='../typings/angularjs/angular-route.d.ts' />
 
 ///<reference path='Model.ts' />
 ///<reference path='Service.ts' />
@@ -32,6 +33,7 @@ module App {
 	)
 		// モジュールとして登録する。angular.module() -> .config() -> .run() で1セット。
 		.run(($rootScope:ng.IRootScopeService, $routeParams:ng.route.IRouteParamsService)=> {
+			false;
 		})
 	;
 
@@ -43,6 +45,7 @@ module App {
 		[],
 		// .configで設定する項目はなし
 		()=> {
+			false;
 		}
 	)
 		.factory("sampleService", ($http:ng.IHttpService):Service.SampleService=> {
@@ -54,6 +57,7 @@ module App {
 		appName + ".controller",
 		[appName + ".service"],
 		()=> {
+			false;
 		}
 	)
 		.controller("SampleTestController", Sample.TestController)
@@ -64,6 +68,7 @@ module App {
 		appName + ".directive",
 		[],
 		()=> {
+			false;
 		}
 	)
 		.directive("tgFileBind", ()=> {
@@ -114,6 +119,7 @@ module App {
 		appName + ".filter",
 		[],
 		()=> {
+			false;
 		}
 	)
 	/**
@@ -144,6 +150,7 @@ module App {
 					return a.$key.keystr === b.$key.keystr;
 				};
 				if (angular.isUndefined(options)) {
+					false;
 				} else if (angular.isFunction(options.compare)) {
 					compareFn = options.compare;
 				}

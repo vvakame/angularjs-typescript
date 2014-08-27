@@ -1,39 +1,25 @@
 .DS_Store
+.idea/
 
 # for client side development
 .sass-cache/
 .tscache/
-tsd-cache/
 node_modules/
 bower_components/
-bower-task/
-src/main/typescript/libs/
+typings/
 tscommand.tmp.txt
 
-src/test/typescript/*.js
-src/test/typescript/*.js.map
-src/test/typescript/*.d.ts
-src/test/typescript/libs/
+docs/
 
-src/test/resources/typescript/data/
+scripts/**/*.js
+scripts/**/*.js.map
 
-src/main/webapp/css
+stylesheets/
 
-src/main/webapp/scripts/*.js
-src/main/webapp/scripts/**/*.js
-src/main/webapp/scripts/*.js.map
-src/main/webapp/scripts/*.d.ts
+test/**/*.js
+test/**/*.js.map
 
-# espower generated
-src/test/typescriptEspowered/
+testEspowered/**/*.js
+testEspowered/**/*.js.map
 
-# bower generated
-src/main/webapp/scripts/libs/*
-
-# tsd generated
-
-# karma generated
 test-results.xml
-
-# WebStorm meta file
-.idea/

@@ -2,8 +2,8 @@
 	"version": "v4",
 	"repo": "borisyankov/DefinitelyTyped",
 	"ref": "master",
-	"path": "src/main/typescript/libs/typings",
-	"bundle": "src/main/typescript/libs/typings/bundle.d.ts",
+	"path": "typings",
+	"bundle": "typings/bundle.d.ts",
 	"installed": {
 		"jquery/jquery.d.ts": {
 			"commit": "9d2478b8a80febe1d89a5d35cdf6051d121f5437"

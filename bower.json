@@ -11,32 +11,5 @@
 		"mocha": "1.21.4",
 		"power-assert": "0.8.0",
 		"angular-mocks": "1.2.23"
-	},
-	"exportsOverride": {
-		"es5-shim": {
-			"main-js": "**/es5-shim.js"
-		},
-		"jquery": {
-			"main-js": "dist/jquery.js"
-		},
-		"angular": {
-			"main-js": "**/angular.js",
-			"main-css": "**/*.css"
-		},
-		"angular-route": {
-			"main-js": "**/angular-route.js",
-			"main-css": "**/*.css"
-		},
-
-		"mocha": {
-			"test-js": "*.js",
-			"test-css": "*.css"
-		},
-		"power-assert": {
-			"test-js": "build/*.js"
-		},
-		"angular-mocks": {
-			"test-js": "**/*.js"
-		}
 	}
 }

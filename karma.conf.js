@@ -11,15 +11,21 @@ module.exports = function (config) {
 		// frameworks to use
 		frameworks: ['mocha'],
 
+		preprocessors: {
+			'**/*.js': ['sourcemap'],
+			'scripts/**/*.js': ['coverage']
+		},
 
 		// list of files / patterns to load in the browser
 		files: [
-			'src/main/webapp/scripts/libs/es5-shim.js',
-			'src/main/webapp/scripts/libs/jquery.js',
-			'src/main/webapp/scripts/libs/angular.js',
-			'src/main/webapp/scripts/**/*.js',
-			'src/test/typescript/libs/*.js',
-			'src/test/typescriptEspowered/*.js'
+			'bower_components/es5-shim/es5-shim.js',
+			'bower_components/jquery/dist/jquery.js',
+			'bower_components/angular/angular.js',
+			'bower_components/angular-route/angular-route.js',
+			'scripts/**/*.js',
+			'bower_components/power-assert/build/power-assert.js',
+			'bower_components/angular-mocks/angular-mocks.js',
+			'testEspowered/**/*.js'
 		],
 
 
@@ -31,8 +37,20 @@ module.exports = function (config) {
 
 		// test results reporter to use
 		// possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
-		reporters: ['progress', 'junit'],
+		reporters: ['progress', 'junit', 'coverage'],
 
+		// optionally, configure the reporter
+		coverageReporter: {
+			dir: 'coverage/',
+			reporters: [
+				{
+					type: 'html'
+				},
+				{
+					type: 'cobertura', file: 'clover.xml'
+				}
+			]
+		},
 
 		// web server port
 		port: 9876,

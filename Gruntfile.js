@@ -8,7 +8,7 @@ module.exports = function (grunt) {
 			client: {
 				tsMain: "scripts",
 				tsTest: "test",
-				scss: "scss",
+				less: "less",
 
 				jsMainOut: "scripts",
 				jsTestOut: "test",
@@ -39,28 +39,16 @@ module.exports = function (grunt) {
 				out: '<%= opt.client.jsTestOut %>/IgniteSpec.js'
 			}
 		},
-		compass: {
-			dev: {
+		less: {
+			main: {
 				options: {
-					sassDir: '<%= opt.client.scss %>',
-					cssDir: '<%= opt.client.cssOut %>',
-					imagesDir: '<%= opt.client.imageOut %>',
-					javascriptsDir: '<%= opt.client.jsMainOut %>',
-					noLineComments: false,
-					debugInfo: true,
-					relativeAssets: true
-				}
-			},
-			prod: {
-				options: {
-					environment: 'production',
-					sassDir: '<%= opt.client.scss %>',
-					cssDir: '<%= opt.client.cssOut %>',
-					imagesDir: '<%= opt.client.imageOut %>',
-					javascriptsDir: '<%= opt.client.jsMainOut %>',
-					noLineComments: true,
-					debugInfo: false,
-					relativeAssets: true
+					sourceMapBasepath: "<%= opt.client.less %>",
+					sourceMap: true,
+					outputSourceFiles: true,
+					sourceMapRootpath: "../<%= opt.client.less %>"
+				},
+				files: {
+					"<%= opt.client.cssOut %>/main.css": "<%= opt.client.less %>/source.less"
 				}
 			}
 		},
@@ -129,7 +117,7 @@ module.exports = function (grunt) {
 		clean: {
 			clientCss: {
 				src: [
-					'src/main/webapp/css/*.css'
+					'<%= opt.client.cssOut %>/**/*.css'
 				]
 			},
 			clientScript: {
@@ -187,7 +175,7 @@ module.exports = function (grunt) {
 	});
 
 	grunt.registerTask('setup', ['clean', 'bower', 'dtsm', 'wiredep']);
-	grunt.registerTask('default', ['clean:clientCss', 'clean:clientScript', 'ts:clientMain', 'tslint', 'compass:dev']);
+	grunt.registerTask('default', ['clean:clientCss', 'clean:clientScript', 'ts:clientMain', 'tslint', 'less']);
 	grunt.registerTask('test', ['clean:clientScript', 'ts:clientTest', 'tslint', 'espower', 'karma']);
 	grunt.registerTask('docs', ['typedoc']);
 	grunt.registerTask('serve', ['connect:dev']);

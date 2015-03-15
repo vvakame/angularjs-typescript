@@ -118,17 +118,11 @@ module.exports = function (grunt) {
 				exclude: []
 			}
 		},
-		tsd: {
+		dtsm: {
 			client: {
 				options: {
-					// execute a command
-					command: 'reinstall',
-
-					//optional: always get from HEAD
-					latest: false,
-
 					// optional: specify config file
-					config: './tsd.json'
+					confog: './dtsm.json'
 				}
 			}
 		},
@@ -145,15 +139,15 @@ module.exports = function (grunt) {
 					'<%= opt.client.jsMainOut %>/**/*.d.ts',
 					'<%= opt.client.jsMainOut %>/**/*.js.map',
 					// client test
-					'<%= opt.client.jsTestOut %>/*.js',
-					'<%= opt.client.jsTestOut %>/*.js.map',
-					'<%= opt.client.jsTestOut %>/*.d.ts',
+					'<%= opt.client.jsTestOut %>/**/*.js',
+					'<%= opt.client.jsTestOut %>/**/*.js.map',
+					'<%= opt.client.jsTestOut %>/**/*.d.ts',
 					'<%= opt.client.jsEspowerOut %>/'
 				]
 			},
-			tsd: {
+			dtsm: {
 				src: [
-					// tsd installed
+					// dtsm installed
 					'typings'
 				]
 			},
@@ -192,7 +186,7 @@ module.exports = function (grunt) {
 		}
 	});
 
-	grunt.registerTask('setup', ['clean', 'bower', 'tsd', 'wiredep']);
+	grunt.registerTask('setup', ['clean', 'bower', 'dtsm', 'wiredep']);
 	grunt.registerTask('default', ['clean:clientCss', 'clean:clientScript', 'ts:clientMain', 'tslint', 'compass:dev']);
 	grunt.registerTask('test', ['clean:clientScript', 'ts:clientTest', 'tslint', 'espower', 'karma']);
 	grunt.registerTask('docs', ['typedoc']);

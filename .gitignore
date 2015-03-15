@@ -8,6 +8,7 @@ node_modules/
 bower_components/
 typings/
 tscommand.tmp.txt
+tsconfig.json
 
 docs/
 

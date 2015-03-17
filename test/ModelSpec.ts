@@ -1,10 +1,11 @@
-///<reference path='../typings/mocha/mocha.d.ts' />
-///<reference path='../typings/power-assert/power-assert.d.ts' />
-
-///<reference path='../scripts/Model.ts' />
-
 "use strict";
 
+import assert = require("power-assert");
+import Model = require("../scripts/Model");
+
 describe("Modelの", ()=> {
-	false;
+	it("newできる", () => {
+		var obj = new Model("{\"test\":\"Hi!\"}");
+		assert(obj.test === "Hi!");
+	});
 });

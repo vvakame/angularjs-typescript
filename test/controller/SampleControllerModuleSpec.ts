@@ -8,16 +8,23 @@
 
 "use strict";
 
+import ngMock = require('angular-mocks/ngMock');
+
+import assert = require("power-assert");
+
+import App = require("../../scripts/Ignite");
+import SampleController = require("../../scripts/controller/SampleControllerModule");
+
 describe("Controllerの", ()=> {
-	var $injector:ng.auto.IInjectorService;
+	var $injector: ng.auto.IInjectorService;
 	beforeEach(()=> {
-		$injector = angular.injector(["ngMock", App.appName + ".service"]);
+		$injector = angular.injector([ngMock, App.appName + ".service"]);
 	});
 
 	describe("Sample.TestControllerの", ()=> {
-		var $scope:Sample.IScope;
-		var $controller:ng.IControllerService;
-		var $httpBackend:ng.IHttpBackendService;
+		var $scope: SampleController.IScope;
+		var $controller: ng.IControllerService;
+		var $httpBackend: ng.IHttpBackendService;
 
 		beforeEach(()=> {
 			$httpBackend = $injector.get("$httpBackend");
@@ -27,7 +34,7 @@ describe("Controllerの", ()=> {
 		});
 
 		it("Controllerの作成", ()=> {
-			var controller:Sample.TestController = $controller(Sample.TestController, {
+			var controller: SampleController = $controller(SampleController, {
 				$scope: $scope,
 				$routeParams: {
 					domain: "topgate.co.jp"

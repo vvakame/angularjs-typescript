@@ -1,1 +1,1 @@
-///<reference path='controller/SampleControllerModuleSpec.ts' />
+export import SampleControllerModuleSpec = require("./controller/SampleControllerModuleSpec");

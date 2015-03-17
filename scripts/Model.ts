@@ -1,21 +1,19 @@
+"use strict";
+
+import angular = require("angular");
+
 /**
  * モデルのモジュール。
  */
-module Model {
-	"use strict";
+class Sample {
+	test: string;
 
-	export class Sample {
-		test:string;
-
-		/**
-		 * @constructor
-		 * @param data JSONObjectまたはJSON文字列
-		 */
-			constructor(data:any) {
-			if (angular.isString(data)) {
-				data = angular.fromJson(data);
-			}
-			this.test = data.test;
+	constructor(data: any) {
+		if (angular.isString(data)) {
+			data = angular.fromJson(data);
 		}
+		this.test = data.test;
 	}
 }
+
+export = Sample;

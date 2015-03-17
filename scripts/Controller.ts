@@ -1,1 +1,1 @@
-///<reference path='controller/SampleControllerModule.ts' />
+export import SampleController = require("./controller/SampleControllerModule");

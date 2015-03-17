@@ -18,14 +18,9 @@ module.exports = function (config) {
 
 		// list of files / patterns to load in the browser
 		files: [
-			'bower_components/es5-shim/es5-shim.js',
-			'bower_components/jquery/dist/jquery.js',
-			'bower_components/angular/angular.js',
-			'bower_components/angular-route/angular-route.js',
-			'scripts/**/*.js',
-			'bower_components/power-assert/build/power-assert.js',
-			'bower_components/angular-mocks/angular-mocks.js',
-			'testEspowered/**/*.js'
+			// 'scripts/**/*.js',
+			'testEspowered/buildSpec.js'
+			// 'testEspowered/**/*.js'
 		],
 
 

@@ -31,12 +31,10 @@ module.exports = function (grunt) {
 				declaration: false             // generate a declaration .d.ts file for every output js file. [true | false (default)]
 			},
 			clientMain: {
-				src: ['<%= opt.client.tsMain %>/Ignite.ts'],
-				out: '<%= opt.client.jsMainOut %>/Ignite.js'
+				src: ['<%= opt.client.tsMain %>/Ignite.ts']
 			},
 			clientTest: {
-				src: ['<%= opt.client.tsTest %>/IgniteSpec.ts'],
-				out: '<%= opt.client.jsTestOut %>/IgniteSpec.js'
+				src: ['<%= opt.client.tsTest %>/IgniteSpec.ts']
 			}
 		},
 		less: {
@@ -90,20 +88,19 @@ module.exports = function (grunt) {
 				]
 			}
 		},
-		bower: {
-			install: {
-				options: {
-					install: true,
-					copy: false,
-					verbose: true, // ログの詳細を出すかどうか
-					cleanBowerDir: false
+		browserify: {
+			options: {
+				browserifyOptions: {
+					debug: true
 				}
-			}
-		},
-		wiredep: {
+			},
 			main: {
-				src: ['index.html'], // point to your HTML file.
-				exclude: []
+				src: 'scripts/Ignite.js',
+				dest: 'scripts/build.js'
+			},
+			test: {
+				src: 'test/IgniteSpec.js',
+				dest: 'test/buildSpec.js'
 			}
 		},
 		dtsm: {
@@ -138,12 +135,6 @@ module.exports = function (grunt) {
 					// dtsm installed
 					'typings'
 				]
-			},
-			bower: {
-				src: [
-					// bower installed
-					'bower_components'
-				]
 			}
 		},
 		karma: {
@@ -174,9 +165,9 @@ module.exports = function (grunt) {
 		}
 	});
 
-	grunt.registerTask('setup', ['clean', 'bower', 'dtsm', 'wiredep']);
-	grunt.registerTask('default', ['clean:clientCss', 'clean:clientScript', 'ts:clientMain', 'tslint', 'less']);
-	grunt.registerTask('test', ['clean:clientScript', 'ts:clientTest', 'tslint', 'espower', 'karma']);
+	grunt.registerTask('setup', ['clean', 'dtsm']);
+	grunt.registerTask('default', ['clean:clientCss', 'clean:clientScript', 'ts:clientMain', 'tslint','browserify:main', 'less']);
+	grunt.registerTask('test', ['clean:clientScript', 'ts:clientTest', 'tslint','browserify:test', 'espower', 'karma']);
 	grunt.registerTask('docs', ['typedoc']);
 	grunt.registerTask('serve', ['connect:dev']);
 

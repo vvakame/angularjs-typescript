@@ -1,4 +1,1 @@
-///<reference path='Model.ts' />
-///<reference path='Controller.ts' />
-
-///<reference path='service/SampleServiceModule.ts' />
+export import SampleService = require("./service/SampleServiceModule");

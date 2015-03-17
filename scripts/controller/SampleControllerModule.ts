@@ -1,25 +1,26 @@
-///<reference path='../../typings/angularjs/angular.d.ts' />
+"use strict";
 
-///<reference path='../Model.ts' />
-///<reference path='../service/SampleServiceModule.ts' />
+import SampleService = require("../service/SampleServiceModule");
 
-module Sample {
+class SampleController {
+
+	constructor(public $scope: SampleController.IScope, public sampleService: SampleService) {
+		$scope.name = "サーバと通信中";
+		$scope.temp = "仮";
+	}
+
+	update() {
+		this.sampleService.test();
+	}
+}
+
+module SampleController {
 	"use strict";
 
 	export interface IScope extends ng.IScope {
 		name: string;
 		temp: string;
 	}
-
-	export class TestController {
-
-		constructor(public $scope:IScope, public sampleService:Service.SampleService) {
-			$scope.name = "サーバと通信中";
-			$scope.temp = "仮";
-		}
-
-		update() {
-			this.sampleService.test();
-		}
-	}
 }
+
+export = SampleController;

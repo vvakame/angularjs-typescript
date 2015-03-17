@@ -1,17 +1,13 @@
-///<reference path='../../typings/angularjs/angular.d.ts' />
+"use strict";
 
-///<reference path='../Model.ts' />
+class SampleService {
 
-module Service {
-	"use strict";
+	constructor(public $http: ng.IHttpService) {
+	}
 
-	export class SampleService {
-
-		constructor(public $http:ng.IHttpService) {
-		}
-
-		test():ng.IHttpPromise<any> {
-			return this.$http.get("");
-		}
+	test(): ng.IHttpPromise<any> {
+		return this.$http.get("");
 	}
 }
+
+export = SampleService;

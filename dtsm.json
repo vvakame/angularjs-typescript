@@ -9,19 +9,19 @@
   "bundle": "typings/bundle.d.ts",
   "dependencies": {
     "angularjs/angular.d.ts": {
-      "ref": "95d860879fb90c405aeb13eea7b8564f9c0df2bf"
+      "ref": "7c05f43b86a2b5fb30cd1f67cab942f25294205b"
     },
     "angularjs/angular-route.d.ts": {
-      "ref": "95d860879fb90c405aeb13eea7b8564f9c0df2bf"
+      "ref": "7c05f43b86a2b5fb30cd1f67cab942f25294205b"
     },
     "mocha/mocha.d.ts": {
-      "ref": "95d860879fb90c405aeb13eea7b8564f9c0df2bf"
+      "ref": "7c05f43b86a2b5fb30cd1f67cab942f25294205b"
     },
     "power-assert/power-assert.d.ts": {
-      "ref": "95d860879fb90c405aeb13eea7b8564f9c0df2bf"
+      "ref": "7c05f43b86a2b5fb30cd1f67cab942f25294205b"
     },
     "angularjs/angular-mocks.d.ts": {
-      "ref": "95d860879fb90c405aeb13eea7b8564f9c0df2bf"
+      "ref": "7c05f43b86a2b5fb30cd1f67cab942f25294205b"
     }
   }
 }

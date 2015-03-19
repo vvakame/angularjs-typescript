@@ -1,7 +1,7 @@
 /**
  * モデルのモジュール。
  */
-module Model {
+module app.hello {
 	"use strict";
 
 	export class Sample {

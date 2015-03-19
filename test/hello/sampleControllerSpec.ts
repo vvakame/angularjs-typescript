@@ -4,18 +4,18 @@
 ///<reference path='../../typings/angularjs/angular.d.ts' />
 ///<reference path='../../typings/angularjs/angular-route.d.ts' />
 
-///<reference path='../../scripts/Ignite.ts' />
+///<reference path='../../scripts/index.ts' />
 
 "use strict";
 
 describe("Controllerの", ()=> {
 	var $injector:ng.auto.IInjectorService;
 	beforeEach(()=> {
-		$injector = angular.injector(["ngMock", App.appName + ".service"]);
+		$injector = angular.injector(["ngMock", "app.hello"]);
 	});
 
-	describe("Sample.TestControllerの", ()=> {
-		var $scope:Sample.IScope;
+	describe("app.hello.TestControllerの", ()=> {
+		var $scope:app.hello.TestScope;
 		var $controller:ng.IControllerService;
 		var $httpBackend:ng.IHttpBackendService;
 
@@ -27,7 +27,7 @@ describe("Controllerの", ()=> {
 		});
 
 		it("Controllerの作成", ()=> {
-			var controller:Sample.TestController = $controller(Sample.TestController, {
+			var controller:app.hello.TestController = $controller(app.hello.TestController, {
 				$scope: $scope,
 				$routeParams: {
 					domain: "topgate.co.jp"

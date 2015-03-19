@@ -21,9 +21,9 @@ module.exports = function (grunt) {
 		ts: {
 			options: {
 				compile: true,                 // perform compilation. [true (default) | false]
-				comments: false,               // same as !removeComments. [true | false (default)]
+				comments: true,               // same as !removeComments. [true | false (default)]
 				target: 'es5',                 // target javascript language. [es3 (default) | es5]
-				module: 'commonjs',            // target javascript module style. [amd (default) | commonjs]
+				// module: 'commonjs',            // target javascript module style. [amd (default) | commonjs]
 				noImplicitAny: true,
 				sourceMap: true,              // generate a source map for every output js file. [true (default) | false]
 				sourceRoot: '',                // where to locate TypeScript files. [(default) '' == source ts location]
@@ -31,12 +31,12 @@ module.exports = function (grunt) {
 				declaration: false             // generate a declaration .d.ts file for every output js file. [true | false (default)]
 			},
 			clientMain: {
-				src: ['<%= opt.client.tsMain %>/Ignite.ts'],
-				out: '<%= opt.client.jsMainOut %>/Ignite.js'
+				src: ['<%= opt.client.tsMain %>/index.ts'],
+				out: '<%= opt.client.jsMainOut %>/index.js'
 			},
 			clientTest: {
-				src: ['<%= opt.client.tsTest %>/IgniteSpec.ts'],
-				out: '<%= opt.client.jsTestOut %>/IgniteSpec.js'
+				src: ['<%= opt.client.tsTest %>/indexSpec.ts'],
+				out: '<%= opt.client.jsTestOut %>/indexSpec.js'
 			}
 		},
 		less: {

@@ -152,7 +152,7 @@ module.exports = function (grunt) {
 					configFile: 'karma.conf.js',
 					autoWatch: false,
 					browsers: ['PhantomJS'],
-					reporters: ['progress', 'junit'],
+					reporters: ['progress'],
 					singleRun: true,
 					keepalive: true
 				}

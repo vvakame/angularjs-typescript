@@ -15,13 +15,6 @@ if [ $? -ne 0 ] ; then
 	ISERROR=1
 fi
 
-which compass > /dev/null 2>&1
-if [ $? -ne 0 ] ; then
-	echo "command not found: compass"
-	echo "please install compass. e.g. gem install compass"
-	ISERROR=1
-fi
-
 if [ $ISERROR == 1 ] ; then
 	exit
 fi

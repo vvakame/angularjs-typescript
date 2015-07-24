@@ -21,10 +21,10 @@
     "grunt-dtsm": "^0.2.9",
     "grunt-espower": "^0.10.0",
     "grunt-exec": "^0.4.6",
-    "grunt-karma": "^0.11.2",
+    "grunt-karma": "^0.12.0",
     "grunt-open": "^0.2.3",
-    "grunt-ts": "^4.2.0-beta.1",
-    "grunt-tslint": "^2.3.1-beta",
+    "grunt-ts": "^4.2.0",
+    "grunt-tslint": "^2.4.0",
     "grunt-typedoc": "^0.2.1",
     "grunt-wiredep": "^2.0.0",
     "http-server": "^0.8.0",
@@ -36,6 +36,6 @@
     "karma-sourcemap-loader": "^0.3.5",
     "load-grunt-tasks": "^3.2.0",
     "time-grunt": "^1.2.1",
-    "typescript": "^1.5.0-beta"
+    "typescript": "^1.5.3"
   }
 }

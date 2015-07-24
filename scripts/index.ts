@@ -3,7 +3,7 @@
 
 ///<reference path='./hello/index.ts' />
 
-module app {
+namespace app {
 	"use strict";
 
 	angular.module(

@@ -1,4 +1,4 @@
-module app.hello {
+namespace app.hello {
 	"use strict";
 
 	export interface TestScope extends ng.IScope {

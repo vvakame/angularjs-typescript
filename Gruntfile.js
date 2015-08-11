@@ -110,7 +110,7 @@ module.exports = function (grunt) {
 			client: {
 				options: {
 					// optional: specify config file
-					confog: './dtsm.json'
+					config: './dtsm.json'
 				}
 			}
 		},

@@ -9,21 +9,21 @@
 "use strict";
 
 describe("Controllerの", ()=> {
-	var $injector:ng.auto.IInjectorService;
+	var $injector:angular.auto.IInjectorService;
 	beforeEach(()=> {
 		$injector = angular.injector(["ngMock", "app.hello"]);
 	});
 
 	describe("app.hello.TestControllerの", ()=> {
 		var $scope:app.hello.TestScope;
-		var $controller:ng.IControllerService;
-		var $httpBackend:ng.IHttpBackendService;
+		var $controller:angular.IControllerService;
+		var $httpBackend:angular.IHttpBackendService;
 
 		beforeEach(()=> {
-			$httpBackend = $injector.get("$httpBackend");
-			$controller = $injector.get("$controller");
+			$httpBackend = $injector.get<angular.IHttpBackendService>("$httpBackend");
+			$controller = $injector.get<angular.IControllerService>("$controller");
 
-			$scope = <any> $injector.get("$rootScope").$new();
+			$scope = $injector.get<angular.IRootScopeService>("$rootScope").$new();
 		});
 
 		it("Controllerの作成", ()=> {

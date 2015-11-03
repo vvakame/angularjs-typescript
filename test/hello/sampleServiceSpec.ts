@@ -9,19 +9,19 @@
 "use strict";
 
 describe("Serviceの", ()=> {
-	var $injector:ng.auto.IInjectorService;
+	var $injector:angular.auto.IInjectorService;
 	beforeEach(()=> {
 		$injector = angular.injector(["ngMock", "app.hello"]);
 	});
 
 	describe("Service.SampleServiceの", ()=> {
-		var $httpBackend:ng.IHttpBackendService;
+		var $httpBackend:angular.IHttpBackendService;
 		var service:app.hello.SampleService;
 
 		beforeEach(()=> {
-			$httpBackend = $injector.get("$httpBackend");
+			$httpBackend = $injector.get<angular.IHttpBackendService>("$httpBackend");
 
-			service = $injector.instantiate(app.hello.SampleService, {
+			service = $injector.instantiate<app.hello.SampleService>(app.hello.SampleService, {
 			});
 		});
 

@@ -2,8 +2,8 @@ namespace app.hello {
 	"use strict";
 
 	export interface TestScope extends ng.IScope {
-		name: string;
-		temp: string;
+		name?: string;
+		temp?: string;
 	}
 
 	export class TestController {
